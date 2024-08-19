@@ -7,7 +7,7 @@ from PIL import Image
 class LoadedImage:
     def __init__(self, path: str) -> None:
         self.path = path
-        self.loadedImage = Image.open(self.path)
+        self.loadedImage = Image.open(self.path).convert("RGB")
         self.width = self.loadedImage.size[0]
         self.height = self.loadedImage.size[1]
         self.imageData = self.__loadImageData()
